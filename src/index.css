@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
 html, body {
     width: 100%;
     height: 100%;
 }
+
+path { transition: fill .4s ease; }
 
 #root {
     height: 100%;
@@ -17,16 +21,19 @@ html, body {
 
 .main {
     height: 90%;
+    width: 100%;
+    display: flex;
 }
 
 .main__nav {
     padding-top: 24px;
     height: 100%;
-    width: 25%;
+    width: 20%;
     background-color: black;
 }
 
 .nav_logo a {
+    display: block;
     height: 40px;
     padding: 0 24px;
     margin-bottom: 18px;
@@ -38,9 +45,80 @@ html, body {
     height: 40px;
 }
 
+.nav_buttons {
+    list-style: none;
+    padding: 0 8px;
+}
+
+.nav_buttons__btn {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    color: #b3b3b3;
+    transition: .4s;
+}
+
+.nav_buttons__btn:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.nav_buttons__btn:hover > svg {
+    fill: white
+}
+
+.nav_buttons__btn_active {
+    color: white;
+}
+
+.nav_buttons__btn > svg {
+    margin-right: 8px;
+}
+
+.main__container {
+    height: 100%;
+    width: 80%;
+}
+
+.top_bar{
+    width: 100%;
+    height: 64px;
+    /* background-color: aliceblue; */
+}
+
+.top_bar__header {
+    padding: 16px 32px;
+    height: 64px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile_btn {
+    height: 32px;
+    display: flex;
+    background-color: black;
+    border-radius: 23px;
+    width: 20%;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    font-weight: 600;
+}
+
+.profile_btn__avatar {
+    width: 28px;
+    height: 28px;
+    background-color: #535353;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* margin-left: 1%; */
+}
+
 .content {
     height: 100%;
-    width: 75%;
 }
 
 .now_playing_bar {
