@@ -45,12 +45,12 @@ path { transition: fill .4s ease; }
     height: 40px;
 }
 
-.nav_buttons {
+.nav_btn {
     list-style: none;
     padding: 0 8px;
 }
 
-.nav_buttons__btn {
+.nav_btn__btn {
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -59,20 +59,20 @@ path { transition: fill .4s ease; }
     transition: .4s;
 }
 
-.nav_buttons__btn:hover {
+.nav_btn__btn:hover {
     cursor: pointer;
     color: white;
 }
 
-.nav_buttons__btn:hover > svg {
+.nav_btn__btn:hover > svg {
     fill: white
 }
 
-.nav_buttons__btn_active {
+.nav_btn__btn_active {
     color: white;
 }
 
-.nav_buttons__btn > svg {
+.nav_btn__btn > svg {
     margin-right: 8px;
 }
 
@@ -84,26 +84,65 @@ path { transition: fill .4s ease; }
 .top_bar{
     width: 100%;
     height: 64px;
-    /* background-color: aliceblue; */
+    /* background-cprofile_btnolor: aliceblue; */
 }
 
 .top_bar__header {
     padding: 16px 32px;
     height: 64px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
+.navigation_btns {
+    display: flex;
+    justify-content: space-around;
+    width: 12%;
+}
+
+.navigation_btn {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+.navigation_btn_disabled {
+    opacity: .5;
+}
+
+.navigation_btn:hover {
+    cursor: pointer;
+}
+
+.navigation_btn_disabled:hover {
+    cursor:not-allowed;
+}
 .profile_btn {
     height: 32px;
     display: flex;
-    background-color: black;
+    background-color: #111;
     border-radius: 23px;
     width: 20%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     color: white;
     font-weight: 600;
+}
+
+.profile_btn span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+    font-size: 0.875rem;
+}
+
+.profile_btn > svg {
+    margin-right: 6px;
 }
 
 .profile_btn__avatar {
@@ -115,6 +154,11 @@ path { transition: fill .4s ease; }
     align-items: center;
     border-radius: 50%;
     /* margin-left: 1%; */
+}
+
+.profile_btn:hover {
+    background-color: #333;
+    cursor: pointer;
 }
 
 .content {
