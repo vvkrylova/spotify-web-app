@@ -28,29 +28,37 @@ path { transition: fill .4s ease; }
 .main__nav {
     padding-top: 24px;
     height: 100%;
-    width: 20%;
+    width: 15%;
+    min-width: 200px;
     background-color: black;
 }
 
-.nav_logo a {
+.nav_logo__link {
     display: block;
     height: 40px;
     padding: 0 24px;
     margin-bottom: 18px;
 }
 
-.nav_logo a svg {
+.nav_logo__icon {
     width: 100%;
     max-width: 131px;
     height: 40px;
 }
 
-.nav_btn {
+.nav_btns {
     list-style: none;
     padding: 0 8px;
 }
 
-.nav_btn__btn {
+.nav_btns__line {
+    margin-top: 10px;
+    height: 1px;
+    background-color: #333;
+    border: none;
+}
+
+.nav_btns__btn {
     padding: 0 16px;
     display: flex;
     align-items: center;
@@ -59,26 +67,26 @@ path { transition: fill .4s ease; }
     transition: .4s;
 }
 
-.nav_btn__btn:hover {
+.nav_btns__btn:hover {
     cursor: pointer;
     color: white;
 }
 
-.nav_btn__btn:hover > svg {
+.nav_btns__btn:hover > svg {
     fill: white
 }
 
-.nav_btn__btn_active {
+.nav_btns__btn_active {
     color: white;
 }
 
-.nav_btn__btn > svg {
+.nav_btns__icon {
     margin-right: 8px;
 }
 
 .main__container {
     height: 100%;
-    width: 80%;
+    width: 85%;
 }
 
 .top_bar{
@@ -95,6 +103,7 @@ path { transition: fill .4s ease; }
 }
 
 .navigation_btns {
+    max-width: 100px;
     display: flex;
     justify-content: space-around;
     width: 12%;
@@ -110,7 +119,7 @@ path { transition: fill .4s ease; }
     height: 32px;
 }
 
-.navigation_btn_disabled {
+.navigation_btn__disabled {
     opacity: .5;
 }
 
@@ -122,6 +131,8 @@ path { transition: fill .4s ease; }
     cursor:not-allowed;
 }
 .profile_btn {
+    max-width: 200px;
+    min-width: 130px;
     height: 32px;
     display: flex;
     background-color: #111;
@@ -133,15 +144,18 @@ path { transition: fill .4s ease; }
     font-weight: 600;
 }
 
-.profile_btn span {
+.text_ellipsis {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 70%;
+}
+
+.profile_btn__titile {
+    max-width: 55%;
     font-size: 0.875rem;
 }
 
-.profile_btn > svg {
+.profile_btn__show_more {
     margin-right: 6px;
 }
 
@@ -153,7 +167,6 @@ path { transition: fill .4s ease; }
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    /* margin-left: 1%; */
 }
 
 .profile_btn:hover {
@@ -162,10 +175,132 @@ path { transition: fill .4s ease; }
 }
 
 .content {
-    height: 100%;
+    height: calc(100% - 64px);
+    padding: 0 32px;
+    padding-top: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
+.content__section {
+    display: flex;
+    flex-wrap: wrap;
+    height: 45%;
+    min-height: 350px;
+    min-width: 100%;
+    margin-bottom: 16px;
+}
+
+.section__title {
+    width: 100%;
+    height: 20%;
+    max-height: 50px;
+    display: flex;
+    margin-bottom: 16px;
+    color: white;
+    align-items: center;
+}
+
+.section__title_text {
+    margin-right: auto;
+}
+
+.section__show_all {
+    text-transform: uppercase;
+    margin-left: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #cacaca;
+}
+
+.section__title_text:hover,
+.section__show_all:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.section__content{
+    width: 100%;
+    height: 80%;
+}
+
+.album_card {
+    background-color: #1d1d1d;
+    height: 100%;
+    padding: 16px;
+    width: 215px;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.album_card:hover {
+    cursor: pointer;
+    background-color: #2b2b2b;
+}
+
+.album_card__image {
+    height: auto;
+    padding-bottom: 16px;
+    height: 80%;
+}
+
+.album_card__image_content {
+    height: 100%;
+    width: 100%;
+}
+
+.album_card__info {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    min-height: 62px;
+    color: white;
+}
+
+.album_title {
+    max-height: 70%;
+    font-weight: 600;
+    font-size: 1rem;
+    padding-bottom: 4px;
+}
+
+.album_author {
+    max-height: 30%;
+    font-size: 0.785rem;
+    color: #cacaca;
+}
+
+
 .now_playing_bar {
+    border-top: 1px solid #444;
     height: 10%;
     padding: 0 16px;
 }
+
+.now_playing_bar__footer {
+    /* width: 100%; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player__wrapper {
+    width: 40%;
+}
+
+.player {
+    width: 100%;
+    color: red;
+}
+
+.player::-webkit-media-controls-panel,
+.player::-webkit-media-controls-enclosure {
+    background-color: #707070;
+}
+
+/* .player::-webkit-media-controls-play-button {
+    background-color: white;
+    border-radius: 50%;
+} */
